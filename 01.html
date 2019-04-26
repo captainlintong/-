@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    padding: 0 50px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .red {
+    color: red;
+    word-break: break-all;
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  li {
+    border: 1px solid #ccc;
+  }
+
+  .p {
+    margin-left: 50%;
+    transform: translate(-50%)
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    word-break: break-all;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+      body {
+      padding: 0 10px;
+      }
+  }
+
+
+</style>
+
+<body>
+  <p class="p">web前端工作经验总结</p>
+  <ul class="ul">
+    <li>
+      <div class="red">1、cookies,sessionStorage,localStorage的区别，并分别写出这三种类型的添加方法？</div>
+      <div> webStorage 和 cookie 的区别</div>
+      <p> (1.) 出现时间:<span> cookie 很早以前就有, webStorage 是 H5 标准里面增加的.</span></p>
+      <p>(2)跟随请求的状态:cookie 会跟着请求前后台的跑, webStorage 不会跟着跑</p>
+      <p>(3)存储大小:cookie 一般是 4K 左右, webStorage 一般是 5M 左右</p>
+      <p>(4)生命周期: cookie 一般是浏览器关闭就没有了，可以设置的, sessionStorage 是浏览器关闭就没有了, localStorage 一直存在（除非手动删除）</p>
+      <p>(5)设置角色:cookie 可以在浏览器端设置，可以在服务器端设置, webStorage 只能在浏览器端设置</p>
+      <div>sessionStorage 和 localStorage 的区别</div>
+      <p>声明周期：sessionStorage 是浏览器关闭就没有了，localStorage 一直存在（除非手动删除）</p>
+      <p>跨页面通讯能力：sessionStorage 一般不能跨页面通讯（除非出现跳转），localStorage 可以任意跨页面通讯（域名）</p>
+      <p>添加方法：window.sessionStorage.setItem('name', 'Jack')</p>
+      <p> 添加方法：window.localStorage.setItem('name', 'Jack')</p>
+    </li>
+    <li class="litwo">
+      <p class="red">2、用js实现点击标签实现，弹出标签里的内容</p>
+      <a href="#">点击我是第一个标签</a>
+      <a href="#">点击我是第二个标签</a>
+      <a href="#">点击我是第三个标签</a>
+    </li>
+    <li>
+      <p class="red">3、用js实现对象简单继承的例子</p>
+    </li>
+    <li>
+      <p class="red">4、用正则表达式验证e-mail地址</p>
+      <p>/^\w[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})$/i</p>
+    </li>
+    <li>
+      <p class="red">5、用js把“早上好”转换成“早-上-号”</p>
+      <p>先splite（''）方法字符串转数组，在join('-')数组用‘-’拼接成字符串</p>
+    </li>
+    <li>
+      <p class="red">6、请说明响应式设计（responsive design）和自适应设计（adaptive design）不同</p>
+      <p>自适应是为了解决如何在不同大小的设备上呈现同样的网页（网页的主题和内容不改变）
+        响应式的概念覆盖了自适应，而且涵盖的内容更多。
+        自适应暴露的一个问题，如果屏幕太小，即使网页能够根据屏幕大小进行适配，
+        但是会感觉在小屏幕上查看内容太过拥挤。响应式正是针对这个问题衍生出的概念。
+        它可以自动识别屏幕宽度、并做出相应调整的网页设计、布局和展示的内容可能会有所改变。
+      </p>
+    </li>
+    <li>
+      <p class="red">7、写出下面代码输出结果</p>
+      <p>1、console.log(1 + 2 + '3') // 33</p>
+      <p>
+        2、class MyClass {}
+        console.log(typeof MyClass) // function
+      </p>
+      <p>
+        3、console.log(typeof a)
+        console.log(typeof b)
+        var a = 3
+        let b = 3 // undefined, b is not defined
+      </p>
+      <p>
+        4、<img src="./img/01.JPG" alt=""> 啥也没输出
+      </p>
+
+
+    </li>
+  </ul>
+
+
+
+
+  <script src="./js/01.js"></script>
+  <script src="./js/02.js"></script>
+</body>
+
+</html>
