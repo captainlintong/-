@@ -6,56 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+
 </head>
-<style>
-  body {
-    padding: 0 50px;
-  }
 
-  * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .red {
-    color: red;
-    word-break: break-all;
-  }
-
-  ul {
-    width: 100%;
-  }
-
-  li {
-    border: 1px solid #ccc;
-  }
-
-  .p {
-    margin-left: 50%;
-    transform: translate(-50%)
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  p {
-    word-break: break-all;
-  }
-
-  @media only screen and (max-width: 1024px) {
-    img {
-      width: 100%;
-      height: 100%;
-    }
-      body {
-      padding: 0 10px;
-      }
-  }
-
-
-</style>
 
 <body>
   <p class="p">web前端工作经验总结</p>
@@ -116,8 +70,32 @@
       <p>
         4、<img src="./img/01.JPG" alt=""> 啥也没输出
       </p>
-
-
+    </li>
+    <li>
+      <p class="red">
+        8、http请求中Method包括GET，POST，PUT，DELETE等，试比较说明其含义和使用场景。
+        <a href=" https://www.cnblogs.com/Eric-zhao/p/5215619.html" target="_blank">友情链接1</a>
+        <a href="https://blog.csdn.net/u010529455/article/details/42918639">友情链接2</a>
+      </p>
+      <p>
+        <p>PUT：PUT请求是向服务器端发送数据的，从而改变信息，该请求就像数据库的update操作一样，
+          用来修改数据的内容，但是不会增加数据的种类等，也就是说无论进行多少次PUT操作，资源不会增加。</p>
+        <p>DELETE：就是用来删除某一个资源的，该请求就像数据库的delete操作。</p>
+        <p>GET：GET操作是安全的。所谓安全是指不管进行多少次操作，资源的状态都不会改变，GET只是访问和查看资源。</p>
+        <p>POST：操作不是安全的，每次请求都会创建资源，当我们多次发出POST请求后，其结果是创建出了多个资源。
+          还有一点需要注意的就是，创建操作可以使用POST，也可以使用PUT，区别在于POST
+          是作用在一个集合资源之上的（/uri），而PUT操作是作用在一个具体资源之上的（/uri/xxx），
+          再通俗点说，如果URL可以在客户端确定，那么就使用PUT，如果是在服务端确定，
+          那么就使用POST，比如说很多资源使用数据库自增主键作为标识信息，而创建的资源的标识信息到底是什么只能由服务端提供，这个时候就必须使用POST。
+        </p>
+      </p>
+    </li>
+    <li>
+      <p>9、比较说明下列协议http、http2，https</p>
+      <p>1、HTTPS协议需要到CA申请证书，一般免费证书很少，需要交费。</p>
+      <p>2、HTTP协议运行在TCP之上，所有传输的内容都是明文，HTTPS运行在SSL/TLS之上，SSL/TLS运行在TCP之上，所有传输的内容都经过加密的。</p>
+      <p>3、HTTP和HTTPS使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</p>
+      <p>4、HTTPS可以有效的防止运营商劫持，解决了防劫持的一个大问题。</p>
     </li>
   </ul>
 

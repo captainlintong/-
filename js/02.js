@@ -1,14 +1,14 @@
 (function() {
-// console.log(1 + 2 + '3')
+console.log(1 + 2 + '3')
 
-// class MyClass {}
-// console.log(typeof MyClass)
+class MyClass {}
+console.log(typeof MyClass)
 
-// console.log(typeof a)
-// console.log(typeof b)
+console.log(typeof a)
+console.log(typeof b)
 
-// var a = 3
-// let b = 3
+var a = 3
+let b = 3
 
 var name = "outer"
 var obj = {
