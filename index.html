@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>工作三年总结</title>
   <link rel="stylesheet" href="./css/index.css">
-
+  <base target="_blank">
 </head>
 
 
@@ -24,7 +24,7 @@
       <p>(5)设置角色:cookie 可以在浏览器端设置，可以在服务器端设置, webStorage 只能在浏览器端设置</p>
       <div>sessionStorage 和 localStorage 的区别</div>
       <p>声明周期：sessionStorage 是浏览器关闭就没有了，localStorage 一直存在（除非手动删除）</p>
-      <p>跨页面通讯能力：sessionStorage 一般不能跨页面通讯（除非出现跳转），localStorage 可以任意跨页面通讯（域名）</p>
+      <p><mark>跨页面通讯能力</mark>：sessionStorage 一般不能跨页面通讯（除非出现跳转），localStorage 可以任意跨页面通讯（域名）</p>
       <p>添加方法：window.sessionStorage.setItem('name', 'Jack')</p>
       <p> 添加方法：window.localStorage.setItem('name', 'Jack')</p>
     </li>
@@ -38,7 +38,7 @@
       <p class="red">3、用js实现对象简单继承的例子</p>
     </li>
     <li>
-      <p class="red">4、用正则表达式验证e-mail地址</p>
+      <p class="red">4、<mark>用正则表达式</mark>验证e-mail地址</p>
       <p>/^\w[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})$/i</p>
     </li>
     <li>
@@ -91,11 +91,97 @@
       </p>
     </li>
     <li>
-      <p>9、比较说明下列协议http、http2，https</p>
+      <p class="red">9、比较说明下列协议http、http2，https。 <a
+          href="https://blog.csdn.net/zhaobo012387/article/details/79065915">友情链接</a></p>
       <p>1、HTTPS协议需要到CA申请证书，一般免费证书很少，需要交费。</p>
       <p>2、HTTP协议运行在TCP之上，所有传输的内容都是明文，HTTPS运行在SSL/TLS之上，SSL/TLS运行在TCP之上，所有传输的内容都经过加密的。</p>
       <p>3、HTTP和HTTPS使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</p>
       <p>4、HTTPS可以有效的防止运营商劫持，解决了防劫持的一个大问题。</p>
+      <p>5、通俗理解：HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。</p>
+      <p>6、HTTP协议（HyperText Transfer
+        Protocol，超文本传输协议）是用于从WWW服务器传输超文本到本地浏览器的传输协议。
+        它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，
+        还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。
+        HTTP协议是一个无状态的协议，同一个客户端的这次请求和上次请求是没有对应关系。
+      </p>
+      <p>7、SPDY 2012年google如一声惊雷提出了SPDY的方案，大家才开始从正面看待和解决老版本HTTP协议本身的问题，
+        SPDY可以说是综合了HTTPS和HTTP两者有点于一体的传输协议，主要解决：</p>
+      <p>7-1、降低延迟，针对HTTP高延迟的问题，SPDY优雅的采取了多路复用（multiplexing）。多路复用通过多个请求stream共享一个tcp连接的方式，解决了HOL
+          blocking的问题，降低了延迟同时提高了带宽的利用率。</p>
+      <p>7-2、请求优先级（request prioritization）。多路复用带来一个新的问题是，在连接共享的基础之上有可能会导致关键请求被阻塞。
+        SPDY允许给每个request设置优先级，这样重要的请求就会优先得到响应。比如浏览器加载首页，首页的html内容应该优先展示，
+        之后才是各种静态资源文件，脚本文件等加载，这样可以保证用户能第一时间看到网页内容。
+      </p>
+      <p>7-3、header压缩。前面提到HTTP1.x的header很多时候都是重复多余的。选择合适的压缩算法可以减小包的大小和数量。</p>
+      <p>
+        7-4、基于HTTPS的加密协议传输，大大提高了传输数据的可靠性。
+      </p>
+      <p>
+        7-5、服务端推送（server push），采用了SPDY的网页，例如我的网页有一个sytle.css的请求，
+        在客户端收到sytle.css数据的同时，服务端会将sytle.js的文件推送给客户端，
+        当客户端再次尝试获取sytle.js时就可以直接从缓存中获取到，不用再发请求了。
+      </p>
+      <p>8、HTTP2.0可以说是SPDY的升级版（其实原本也是基于SPDY设计的），
+        但是，HTTP2.0 跟 SPDY 仍有不同的地方，主要是以下两点：</p>
+      <p>
+        8-1、HTTP2.0 支持明文 HTTP 传输，而 SPDY 强制使用 HTTPS。
+      </p>
+      <p>
+        8-2、HTTP2.0 消息头的压缩算法采用 HPACK，而非 SPDY 采用的 DEFLATE。
+      </p>
+    </li>
+    <li>
+      <p class="red">
+        10、简述web前端cookie机制，并结合该机制说明会话保持原理。
+        <a href="https://www.cnblogs.com/whgk/p/6422391.html">具体cookie和session的api看链接</a>
+      </p>
+      <p>cookie是一种在客户端记录用户信息的技术，因为http协议是无状态的（同一个客户端的这次请求和上次请求是没有对应关系），
+        为了解决这个问题而产生了cookie。记录用户名等一些应用。cookie是由服务器端创建发送回浏览器端的，
+        并且每次请求服务器都会将cookie带过去，以便服务器知道该用户是哪一个。
+        其cookie中是使用键值对来存储信息的，并且一个cookie只能存储一个键值对。
+        所以在获取cookie时，是会获取到所有的cookie，然后从其中遍历。　
+        注意：一旦cookie创建好了，就不能在往其中增加别的键值对，但是可以修改其中的内容。
+        注意：cookie不能发送中文，如果要发送中文，就需要进行特别处理。
+        </p>
+        <p><mark>工作流程：</mark></p>
+        <p>9-1. servlet创建cookie，保存少量数据，发送浏览器。</p>
+        <p>9-2. 浏览器获得服务器发送的cookie数据，将自动的保存到浏览器端。</p>
+        <p>9-3. 下次访问时，浏览器将自动携带cookie数据发送给服务器。</p>
+    </li>
+    <li>
+      <p class="red">11、css选择器有哪些？优先级如何排序？！important的用法是什么？<a href="https://www.jianshu.com/p/eb622d032f5e">链接</a>
+      <a href="https://blog.csdn.net/lzgs_4/article/details/43446303">链接2</a>
+      </p>
+      <p>1、标签选择器、类选择器、ID选择器、后代选择器、子代选择器、并集选择器、交集选择器、
+        属性选择器、伪类选择器（链接伪类选择器、结构伪类选择器、
+        目标伪类选择器【:target {}一般情况下,目标伪类选择器常与 锚链接配合使用.】）</p>
+      <p>2、CSS优先级是指CSS样式在浏览器中被解析的先后顺序</p>
+      <p>标签选择器 < 类选择器/属性选择器/伪类选择器 < id选择器 < 内联样式（style="" ）</p>
+      <p>3、CSS优先级法则：比较样式的优先级是，只需统计不同选择器的个数，然后与对应的权值相乘即可。根据结果便可得出优先级。</p>
+      <p>12-3-1结果较大的优先级较高；</p>
+      <p>12-3.2结果相同，则后定义的优先级较高</p>
+      <p>12-3-3创作者的优先级高于浏览者，网页编写者设置的CSS样式的优先权高于浏览器所设置的样式。</p>
+      <p>12-3-4继承的CSS样式优先级低于后来指定的CSS样式</p>
+      <p>12-3-5若样式值中含有!important，则该值优先级最高</p>
+      <p>4、!important 是CSS1就定义的语法，作用是提高指定样式的应用优先权。
+        声明了!important的样式，具有最高的优先级，相当于写在最下面（最后定义）</p>
+    </li>
+    <li>
+      <p class="red">
+       12、列举5个以上html5新标签并描述其用法
+       <a href="http://www.daqianduan.com/2857.html">链接1</a>
+       <a href="https://www.cnblogs.com/zxpsl/p/4999635.html">链接2</a>
+      </p>
+      <p> &lt;audio&gt;定义声音，比如音乐或其他音频流。</p>
+      <p> &lt;nav&gt; 定义导航链接。</p>
+      <p> &lt;header&gt; 定义 section 或 document 的页眉</p>
+      <p> &lt;video&gt; 定义视频，比如电影片段或其他视频流</p>
+      <p> &lt;time&gt; 定义日期或时间，或者两者</p>
+      <p> &lt;mark&gt; 主要的功能就是在页面中高亮显示那些需要在视觉上向用户突出其重要性的文字。
+                        个比较典型的应用就是在搜索结果中向用户高亮显示搜索关键词</p>
+    </li>
+    <li>
+      <p class="red">13、解释一下你对盒模型的理解，以及如何在css中告诉浏览器使用不同的盒模型来渲染你的布局。</p>
     </li>
   </ul>
 
